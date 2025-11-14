@@ -10,23 +10,25 @@ body{
     line-height: 1.6;
     padding: 20px;
 }
-h2{
+nav a{
     margin-bottom: 15px;
     color: #444;
     transition: 0.1s;
     user-select: none;
+    font-size: 36px;
+    text-decoration: none;
 }
-h2:hover{
+nav a:hover{
     color: #000;
     transition: 0.2s;
     cursor: pointer;
 }
-h2:active{
+nav a:active{
     color: #666;
     font-size: 34px;
 }
 
-header{
+nav{
     width: 100%;
     height: 100px;
     display: flex;
@@ -37,7 +39,7 @@ header{
     border-radius: 10px;
 }
 
-header div{
+nav div{
     text-align: center;
     padding-top: 15px;
     font-size: 24px;
@@ -57,17 +59,6 @@ main{
     padding: 20px;
     
 }
-
-main #bio{
-    display: block;
-}
-main #contact{
-    display: none;
-}
-main #projects{
-    display: none;
-}
-
 aside{
     width: 25%;
     background: #777;
@@ -78,13 +69,13 @@ aside{
     border-radius: 10px;
 }
 
-aside label{
+aside ul{
     display: block;
     padding: 10px ;
     list-style: inside;
     
 }
-aside label ul li{
+aside ul li{
     display: flex;
     align-items: center;
     padding: 6px 0;
