@@ -59,6 +59,18 @@ main{
     padding: 20px;
     
 }
+main div h2{
+    font-family: Arial;
+    margin-bottom: 10px;
+}
+main div button{
+    background: #777;
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+    border: none;
+    margin-top: 20px;
+}
 aside{
     width: 25%;
     background: #777;
@@ -97,3 +109,4 @@ footer{
     color: #fff;
     border-radius: 10px;
 }
+
