@@ -34,7 +34,7 @@ header{
     justify-content: center;
     align-items: center;
     background-color: #222;
-    
+    border-radius: 10px;
 }
 
 header div{
@@ -55,6 +55,7 @@ main{
     width: 75%;
     margin: 0 auto;
     padding: 20px;
+    
 }
 
 main #bio{
@@ -69,10 +70,12 @@ main #projects{
 
 aside{
     width: 25%;
-    background: #999;
+    background: #777;
     padding-left:20px;
     padding-top: 20px;
     padding-bottom: 20px;
+    color: #333;
+    border-radius: 10px;
 }
 
 aside label{
@@ -81,6 +84,19 @@ aside label{
     list-style: inside;
     
 }
+aside label ul li{
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 20px;
+}
+.icons{
+    margin-right:10px;
+}
+#csharp{
+    height: 48px;
+    width: 48px;
+}
 footer{
     width: 100%;
     height: 40px;
@@ -88,4 +104,5 @@ footer{
     padding-top: 10px;
     background-color: #222;
     color: #fff;
+    border-radius: 10px;
 }
