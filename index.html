@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+
+    <header>
+        <div>
+            <h2 onclick="changeMainPanel('bio')">Bio</h2>
+        </div>
+        <div>
+            <h2 onclick="changeMainPanel('contact')">Contact</h2>
+        </div>
+        <div>
+            <h2 onclick="changeMainPanel('projects')">Projects</h2>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <aside>
+            <h3>Favorite programming languages</h3>
+            <label>
+                <li>C++</li>
+                <li>C#</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+            </label>
+        </aside>
+
+        <main class="content">
+            <div id="bio">
+                <p> 
+                    My name is Jakub Masłowski and I'm 16 years old. I am learning programming at 
+                    Zespół Szkół Technicznych w Wodzisławiu Śląskim. I enjoy programming and learning 
+                    new technologies. I like playing sports, cooking and listening to music.
+                </p>
+            </div>
+            <div id="contact">
+                <p>
+                    You can contact me via <br>
+                    Email: kmaslowski0@gmail.com <br>
+                    Phone number : +48 579 209 343
+                </p>
+            </div>
+            <div id="projects">
+                <p>
+                    At the moment only this one, but more to come soon!
+                </p>
+            </div>
+        </main>
+    
+    </div>
+
+    <footer>
+        <p> 2025 Jakub Masłowski</p>
+    </footer>
+
+
+</body>
+</html>

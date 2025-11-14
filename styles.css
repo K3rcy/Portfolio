@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+body{
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+h2{
+    margin-bottom: 15px;
+    color: #444;
+    transition: 0.1s;
+    user-select: none;
+}
+h2:hover{
+    color: #000;
+    transition: 0.2s;
+    cursor: pointer;
+}
+h2:active{
+    color: #666;
+    font-size: 34px;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    
+}
+
+header div{
+    text-align: center;
+    padding-top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    flex:1;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+
+}
+
+main{
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main #bio{
+    display: block;
+}
+main #contact{
+    display: none;
+}
+main #projects{
+    display: none;
+}
+
+aside{
+    width: 25%;
+    background: #999;
+    padding-left:20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+aside label{
+    display: block;
+    padding: 10px ;
+    list-style: inside;
+    
+}
+footer{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    background-color: #222;
+    color: #fff;
+}
