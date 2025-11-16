@@ -16,7 +16,7 @@ nav a{
     color: #444;
     transition: 0.1s;
     user-select: none;
-    font-size: 2vw;
+    font-size: clamp(12px, 32px, 2vw);
     text-decoration: none;
     display: inline-block;
     white-space: nowrap;        /* prevent wrapping */
@@ -98,7 +98,7 @@ aside h3{
 }
 aside ul{
     
-    padding: 10px ;
+    
     list-style: inside;
     
 }
