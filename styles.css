@@ -30,7 +30,7 @@ nav a:hover{
 }
 nav a:active{
     color: #666;
-    font-size: 34px;
+    font-size: calc(clamp(12px, 32px, 2vw) + 2px);
 }
 
 nav{
@@ -67,7 +67,7 @@ main{
     padding: 20px;
     
 }
-main p {
+main div p {
     font-size: clamp(4px,14px,2vw);
     margin-bottom: 20px;
 }
