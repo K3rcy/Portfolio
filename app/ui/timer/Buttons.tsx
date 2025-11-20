@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 export function Timer() {
     const [milliseconds, setMilliseconds] = useState(0);
     const [running, setRunning] = useState(false);
-    const intervalRef = useRef(null);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
     const start = () => {
         if (intervalRef.current) return; // already running
@@ -16,8 +16,10 @@ export function Timer() {
     };
 
     const stop = () => {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
+        if (intervalRef.current !== null) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+        }
         setRunning(false);
     };
 

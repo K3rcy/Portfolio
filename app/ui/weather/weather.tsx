@@ -20,6 +20,6 @@ export default async function WeatherComponent({cityName, countryCode}: {cityNam
       </div>
     );
   } catch(error){
-    return <p>Can't find city or country code</p>
+    return <p>Can&apos;t find city or country code</p>
   }
 }
