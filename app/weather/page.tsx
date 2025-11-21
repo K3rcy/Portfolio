@@ -1,6 +1,6 @@
 'use client'
 import WeatherComponent from '@/app/ui/weather/weather';;
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -64,7 +64,9 @@ export default function Page() {
         <br />
 
         {shouldShowWeather ? (
+          <Suspense fallback={<div>Loading the WeatherComponent...</div>}>
             <WeatherComponent cityName={city} stateName={state} countryCode={country} />
+          </Suspense>
         ) : (
             <p>Please enter a city and country code to see the weather.</p>
         )}
