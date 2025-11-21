@@ -52,20 +52,20 @@ export default function Page() {
   return(
     
     <div>
-        <Suspense fallback={<>Loading site</>}>
-          <label htmlFor="">City name:</label>
-          <input type="text" name="city" placeholder="Enter city name" onChange={(e) => (handleCitySearch(e.target.value))}/>
+        
+        <label htmlFor="">City name:</label>
+        <input type="text" name="city" placeholder="Enter city name" onChange={(e) => (handleCitySearch(e.target.value))}/>
           
-          <label htmlFor="">Country code:</label>
-          <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleCountrySearch(e.target.value))}/>
+        <label htmlFor="">Country code:</label>
+        <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleCountrySearch(e.target.value))}/>
 
-          <label htmlFor="">State (US):</label>
-          <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleStateSearch(e.target.value))}/>
-          <br />
-        </Suspense>
+        <label htmlFor="">State (US):</label>
+        <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleStateSearch(e.target.value))}/>
+        <br />
+        
 
         {shouldShowWeather ? (
-          <Suspense fallback={<div>Loading the WeatherComponent...</div>}>
+          <Suspense fallback={<div>XXX</div>}>
             <WeatherComponent cityName={city} stateName={state} countryCode={country} />
           </Suspense>
         ) : (

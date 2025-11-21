@@ -1,4 +1,4 @@
-'use server'
+"use server";
 export type WeatherResult = {
   city_name: string;
   icon_id: string;
