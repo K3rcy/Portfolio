@@ -105,8 +105,8 @@ export default function WeatherComponent({cityName, stateName, countryCode}: {ci
     
     return (
       <div>
-
-          {locations.length > 0 && (
+        {locations.length > 0 && (
+          <Suspense fallback={<>Loading select data...</>}>
             <select
               onChange={(e) => setSelectedIndex(Number(e.target.value))}
               defaultValue=""
@@ -121,7 +121,8 @@ export default function WeatherComponent({cityName, stateName, countryCode}: {ci
                 </option>
               ))}
             </select>
-          )}
+          </Suspense>
+        )}
         {weather && (
           <Suspense fallback={<div>Loading weather data...</div>}>
             

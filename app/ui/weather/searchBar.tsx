@@ -1,18 +1,21 @@
-// app/ui/search/search-bar.tsx
 'use client'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 import { useState } from 'react';
 import WeatherComponent from './weather';
 
-// Ten komponent będzie używał useSearchParams()
 export default function SearchBar() {
-  const [city, setCity] = useState('');
-  const [country, setCountry] = useState("");
-  const [state, setState] = useState("");
 
-  // Hooki nawigacji
-  const searchParams = useSearchParams(); // To jest problematyczny hook
+  const searchParams = useSearchParams();
+
+  const initialCity = searchParams.get('city') ?? '';
+  const initialCountry = searchParams.get('code') ?? '';
+  const initialState = searchParams.get('state') ?? '';
+
+  const [city, setCity] = useState(initialCity);
+  const [country, setCountry] = useState(initialCountry);
+  const [state, setState] = useState(initialState);
+
   const pathname = usePathname();
   const {replace} = useRouter();
 
@@ -20,7 +23,7 @@ export default function SearchBar() {
 
   const handleCitySearch = useDebouncedCallback((x:string) => {
     setCity(x);
-    const params = new URLSearchParams(searchParams.toString()); // Użyj .toString()
+    const params = new URLSearchParams(searchParams.toString());
     if(x) {
       params.set('city', x)
     } else{
@@ -55,13 +58,13 @@ export default function SearchBar() {
   return (
     <div>
       <label htmlFor="">City name:</label>
-        <input type="text" name="city" placeholder="Enter city name" onChange={(e) => (handleCitySearch(e.target.value))}/>
+        <input type="text" name="city" placeholder="Enter city name" onChange={(e) => (handleCitySearch(e.target.value))} defaultValue={initialCity}/>
           
         <label htmlFor="">Country code:</label>
-        <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleCountrySearch(e.target.value))}/>
+        <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleCountrySearch(e.target.value))} defaultValue={initialCountry}/>
 
         <label htmlFor="">State (US):</label>
-        <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleStateSearch(e.target.value))}/>
+        <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleStateSearch(e.target.value))} defaultValue={initialState}/>
         <br />
          
             
