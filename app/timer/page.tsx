@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <div>
       <h2 className={styles.main_h2}>Timer</h2>
-      <p>  
-          <Timer />
-      </p>
+       
+      <Timer />
+      
     </div>
   );
 }
