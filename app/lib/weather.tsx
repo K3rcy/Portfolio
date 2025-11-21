@@ -79,8 +79,10 @@ export async function generateText(weather:WeatherResult){
   else{
     wind_strength= "light";
   }
-
-  if(weather.temperature < 10){
+  if(weather.temperature < 0){
+    conclusion = "It will be very cold today, dress very thickly. Otherwise you might freeze!";
+  }
+  else if(weather.temperature < 10){
     conclusion = "Better take a jacket with yourself!";
   }
   else if(weather.temperature < 20){
@@ -89,9 +91,7 @@ export async function generateText(weather:WeatherResult){
   else if(weather.temperature >= 20){
     conclusion = "It will be hot today, don't bother dressing to thickly!";
   }
-  else if(weather.temperature < 0){
-    conclusion = "It will be very cold today, dress very thickly. Otherwise you might freeze!";
-  }
+  
 
   if(weather.weather == "Rain"){
     conclusion += " Also take an umbrella with yourself, it's raining!";
