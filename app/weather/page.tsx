@@ -62,7 +62,6 @@ export default function Page() {
         <label htmlFor="">State (US):</label>
         <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleStateSearch(e.target.value))}/>
         <br />
-        <button type="submit">Get Weather</button>
 
         {shouldShowWeather ? (
             <WeatherComponent cityName={city} stateName={state} countryCode={country} />
