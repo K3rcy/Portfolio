@@ -124,9 +124,9 @@ export default function WeatherComponent({cityName, stateName, countryCode}: {ci
           )}
         {weather && (
           <Suspense fallback={<div>Loading weather data...</div>}>
-            { selectedIndex && (
-            <h2>Weather in {locations[selectedIndex].name}, {locations[selectedIndex].country} : </h2>
-            )}
+            
+            <h2>Weather in {weather.city_name} : </h2>
+            
             <div>
               <p className="uppercase"><Image src={Weather_icon} alt="Weather Icon" height={96} width={96}/>{weather.description} </p>
               <p>Temperature: {weather.temperature}°C</p>

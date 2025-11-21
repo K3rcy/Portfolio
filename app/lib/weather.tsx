@@ -1,5 +1,6 @@
 'use server'
 export type WeatherResult = {
+  city_name: string;
   icon_id: string;
   weather: string;
   description: string;
@@ -54,6 +55,7 @@ export async function Weather(lat:number, lon:number): Promise<WeatherResult> {
   
   const data = await res.json();
   return {
+    city_name: data.name,
     icon_id: data.weather[0].icon,
     weather: data.weather[0].main,
     description: data.weather[0].description,
