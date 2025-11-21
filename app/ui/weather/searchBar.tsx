@@ -64,7 +64,7 @@ export default function SearchBar() {
         <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleCountrySearch(e.target.value))} defaultValue={initialCountry}/>
 
         <label htmlFor="">State (US):</label>
-        <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleStateSearch(e.target.value))} defaultValue={initialState}/>
+        <input type="text" name="country" placeholder="Enter state code" onChange={(e) => (handleStateSearch(e.target.value))} defaultValue={initialState}/>
         <br />
          
             

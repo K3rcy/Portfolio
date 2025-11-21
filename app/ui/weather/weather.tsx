@@ -1,5 +1,5 @@
 'use client';
-import {Weather, ChooseCity, CordsData, WeatherResult} from "@/app/lib/weather";
+import {Weather, ChooseCity, CordsData, WeatherResult, generateText} from "@/app/lib/weather";
 import {Suspense} from "react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ export default function WeatherComponent({cityName, stateName, countryCode}: {ci
     const [locations, setLocations] = useState<CordsData[]>([]);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [weather, setWeather] = useState<WeatherResult | null>(null);
-    
+    let text;
     useEffect(() => {
       async function loadLocations() {
         try {
@@ -101,7 +101,9 @@ export default function WeatherComponent({cityName, stateName, countryCode}: {ci
 
       }
     } 
-    
+    if(weather){
+    text = generateText(weather)
+    }
     
     return (
       <div>
@@ -133,7 +135,8 @@ export default function WeatherComponent({cityName, stateName, countryCode}: {ci
               <p>Temperature: {weather.temperature}°C</p>
               <p>Humidity: {weather.humidity}%</p>
               <p>Wind speed: {weather.wind_speed} m/s</p>
-
+              <br />
+              <p>{text}</p>
             </div>
           </Suspense>
           )}

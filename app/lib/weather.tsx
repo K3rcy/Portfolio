@@ -4,7 +4,7 @@ export type WeatherResult = {
   icon_id: string;
   weather: string;
   description: string;
-  temperature: string;
+  temperature: number;
   humidity: number;
   wind_speed: number;
   sunset: number;
@@ -59,7 +59,7 @@ export async function Weather(lat:number, lon:number): Promise<WeatherResult> {
     icon_id: data.weather[0].icon,
     weather: data.weather[0].main,
     description: data.weather[0].description,
-    temperature: (data.main.temp - 273.15).toFixed(2),
+    temperature: Number((data.main.temp - 273.15).toFixed(2)),
     humidity: data.main.humidity,
     wind_speed: data.wind.wind_speed,
     sunset: data.sys.sunset,
@@ -67,4 +67,35 @@ export async function Weather(lat:number, lon:number): Promise<WeatherResult> {
   }
 
   
+}
+export async function generateText(weather:WeatherResult){
+  let wind_strength, conclusion;
+  if(weather.wind_speed >= 10.8){
+    wind_strength = "strong";
+  }
+  else if (weather.wind_speed >= 14){
+    wind_strength= "very strong";
+  }
+  else{
+    wind_strength= "light";
+  }
+
+  if(weather.temperature < 10){
+    conclusion = "Better take a jacket with yourself!";
+  }
+  else if(weather.temperature < 20){
+    conclusion = "You might want to take a hoodie with you!";
+  }
+  else if(weather.temperature >= 20){
+    conclusion = "It will be hot today, don't bother dressing to thickly!";
+  }
+  else if(weather.temperature < 0){
+    conclusion = "It will be very cold today, dress very thickly. Otherwise you might freeze!";
+  }
+
+  if(weather.weather == "Rain"){
+    conclusion += " Also take an umbrella with yourself, it's raining!";
+  }
+  
+  return `Today in ${weather.city_name} the weather will be ${weather.description}. Temperature will be: ${weather.temperature}°C with a ${wind_strength} wind. ${conclusion}`;
 }
