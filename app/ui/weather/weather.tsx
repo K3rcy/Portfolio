@@ -112,6 +112,7 @@ export default function WeatherComponent({cityName, stateName, countryCode}: {ci
             <select
               onChange={(e) => setSelectedIndex(Number(e.target.value))}
               defaultValue=""
+              className="border border-black rounded"
             >
               <option value="" disabled>
                 Select a location...
@@ -123,15 +124,18 @@ export default function WeatherComponent({cityName, stateName, countryCode}: {ci
                 </option>
               ))}
             </select>
+            
           </Suspense>
         )}
+        <br />
+        <br />
         {weather && (
           <Suspense fallback={<div>Loading weather data...</div>}>
             
             <h2>Weather in {weather.city_name} : </h2>
             
             <div>
-              <p className="uppercase"><Image src={Weather_icon} alt="Weather Icon" height={96} width={96}/>{weather.description} </p>
+              <p className="uppercase"><Image src={Weather_icon} alt="Weather Icon" height={96} width={96} className="align-center mx-auto"/>{weather.description} </p>
               <p>Temperature: {weather.temperature}°C</p>
               <p>Humidity: {weather.humidity}%</p>
               <p>Wind speed: {weather.wind_speed} m/s</p>

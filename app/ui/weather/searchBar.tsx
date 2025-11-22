@@ -56,26 +56,45 @@ export default function SearchBar() {
 
 
   return (
-    <div>
-      <label htmlFor="">City name:</label>
-        <input type="text" name="city" placeholder="Enter city name" onChange={(e) => (handleCitySearch(e.target.value))} defaultValue={initialCity}/>
-          
-        <label htmlFor="">Country code:</label>
-        <input type="text" name="country" placeholder="Enter country code" onChange={(e) => (handleCountrySearch(e.target.value))} defaultValue={initialCountry}/>
+    <div className={`flex flex-col justify-center items-center text-center`}>
+      <label htmlFor="city" className={`text-center sm:text-xl text-[15px] font-semibold`}>City name:</label>
+        <input 
+          type="text" 
+          name="city" 
+          placeholder="Enter city name" 
+          onChange={(e) => (handleCitySearch(e.target.value))} defaultValue={initialCity}
+          className={`border border-black rounded p-1`}
+        />
 
-        <label htmlFor="">State (US):</label>
-        <input type="text" name="country" placeholder="Enter state code" onChange={(e) => (handleStateSearch(e.target.value))} defaultValue={initialState}/>
+          <br />
+
+        <label htmlFor="name" className={`text-center sm:text-xl text-[15px] font-semibold`}>Country code:</label>
+        <input
+          type="text"
+          name="country"
+          placeholder="Enter country code"
+          onChange={(e) => (handleCountrySearch(e.target.value))} defaultValue={initialCountry}
+          className={`border border-black rounded p-1`}
+        />
+
+          <br />
+
+        <label htmlFor="country" className={`text-center sm:text-xl text-[15px] font-semibold`}>State (US):</label>
+        <input 
+          type="text" 
+          name="country" 
+          placeholder="Enter state code" 
+          onChange={(e) => (handleStateSearch(e.target.value))} defaultValue={initialState}
+          className={`border border-black rounded p-1`}
+        />
+
         <br />
          
-            
-        {shouldShowWeather ? (
-                
-                <WeatherComponent cityName={city} stateName={state} countryCode={country} />
-                  
-                ) : (
-                    <p>Please enter a city and country code to see the weather.</p>
-                )}
-            
+        {shouldShowWeather ? ( 
+          <WeatherComponent cityName={city} stateName={state} countryCode={country} /> 
+        ) : (
+          <p>Please enter a city and country code to see the weather.</p>
+        )}   
                 
     </div>
   )

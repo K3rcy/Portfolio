@@ -1,12 +1,11 @@
-import styles from '@/app/ui/sites.module.css';
 import {Timer} from '@/app/ui/timer/Buttons';
 export default function Home() {
   return (
-    <div>
-      <h2 className={styles.main_h2}>Timer</h2>
+    <main className={'flex-3 bg-violet-200 rounded-xl p-3'}>
+      <h1 className='text-center sm:text-2xl text-xl font-semibold'>TIMER</h1>
        
       <Timer />
       
-    </div>
+    </main>
   );
 }

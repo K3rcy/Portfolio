@@ -1,5 +1,4 @@
 'use client';
-import styles from '@/app/ui/sites.module.css';
 import { useState, useRef } from 'react';
 export function Timer() {
     const [milliseconds, setMilliseconds] = useState(0);
@@ -29,12 +28,12 @@ export function Timer() {
     };
 
     return (
-        <div className="stopwatch">
-            <div className="timer-display">{milliseconds/100}</div>
-            <div className="timer-buttons">
-                <button className={styles.main_button} onClick={start} disabled={running}>Start</button>
-                <button className={styles.main_button} onClick={stop} disabled={!running}>Stop</button>
-                <button className={styles.main_button} onClick={reset} disabled={milliseconds === 0 && !running}>Reset</button>
+        <div>
+            <div className="text-center my-4 text-[15px] sm:text-xl">{milliseconds/100}</div>
+            <div className="flex gap-4 sm:gap-8 my-4">
+                <button className={`flex-1 bg-violet-900 rounded-3xl h-12 sm:rounded-full sm:h-15`} onClick={start} disabled={running}>Start</button>
+                <button className={`flex-1 bg-violet-900 rounded-3xl h-12 sm:rounded-full sm:h-15`} onClick={stop} disabled={!running}>Stop</button>
+                <button className={`flex-1 bg-violet-900 rounded-3xl h-12 sm:rounded-full sm:h-15`} onClick={reset} disabled={milliseconds === 0 && !running}>Reset</button>
             </div>
         </div>
     );
